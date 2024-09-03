@@ -1,0 +1,21 @@
+DROP DATABASE IF EXISTS `chat_app`;
+CREATE DATABASE `chat_app`;
+USE `chat_app`;
+
+
+CREATE TABLE `users`(
+    `Id` INT  PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `UserName` VARCHAR(255) NOT NULL,
+    `Password` VARCHAR(255) NOT NULL,
+    `Email` VARCHAR (255) NOT NULL,
+    `Created-at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `messages`(
+    `Id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `SenderId` INT NOT NULL,
+    `ReciverId` INT NOT NULL,
+    `Message` VARCHAR(250) NOT NULL,
+    `Created-at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);
